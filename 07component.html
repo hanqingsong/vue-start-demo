@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-model</title>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		 <!-- 创建一个 todo-item 组件的实例 -->
+		 <ol>
+		 	<todo-item></todo-item>
+		 </ol>
+			
+
+		  <ol>
+		 	<todo-item-props v-for="item in groceryList"
+		 					 v-bind:todo="item"
+		 					 v-bind:key="item.id">
+		 					 	
+		 	</todo-item-props>
+		 </ol>
+	</div>
+	<script type="text/javascript">
+		Vue.component('todo-item',{
+			template:'<li>这是个待办项</li>'
+		})
+
+		Vue.component('todo-item-props',{
+			props:['todo'],
+			template:'<li>{{ todo.text }}</li>'
+		})
+		var app = new Vue({
+			el:"#app",
+			data:{
+				groceryList: [
+			      { id: 0, text: '蔬菜' },
+			      { id: 1, text: '奶酪' },
+			      { id: 2, text: '随便其他什么人吃的东西' }
+			    ]
+			}
+		});
+	</script>
+</body>
+</html>

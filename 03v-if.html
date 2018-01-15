@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-if</title>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app-3">
+		<p v-if="seen">你看到我了！</p>
+	</div>
+	<script type="text/javascript">
+		var app3 = new Vue({
+			el:"#app-3",
+			data:{
+				seen:true
+			}
+		});
+	</script>
+</body>
+</html>

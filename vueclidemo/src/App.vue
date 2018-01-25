@@ -2,12 +2,17 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
+    <Rate></Rate>
+    <Button></Button>
   </div>
 </template>
 
 <script>
+import Rate from './components/Rate.vue'
+import Button from './components/Button.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: { Rate, Button }
 }
 </script>
 
